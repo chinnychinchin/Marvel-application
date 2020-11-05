@@ -1,0 +1,52 @@
+<div class="container d-flex justify-content-center mt-3">
+    <form action="/search" method="get">
+        <div class="form-group">
+            <label for="" class="form-group-item">Search a character: </label>
+            <input type="text" name="character" id="" value="{{character}}">
+            <button type="submit" class="btn btn-primary">Search</button>
+        </div>
+    </form>
+</div>
+
+<div class="container">
+    <div class="row justify-content-center">
+         
+            {{#each char}}
+                <div class="col-md-auto">
+                <div class="card" style="width: 18rem;">
+                <a href="/character/{{this.charID}}">
+                    <div class="card-body">
+                        <img class="card-img-top" src="{{this.thumbnail}}" alt="thumbnail">
+                        <a href="/character/{{this.charID}}" class="class-link">{{this.name}}</a>
+                    </div>
+                </a>  
+                </div>
+                </div>
+            {{/each}}
+        
+        </div>
+    </div>
+</div>
+
+<div class="mt-4 mb-3">
+    <div class="d-flex row justify-content-around">
+        <nav aria-label="Page navigation example">
+            <ul class="pagination">
+                <li class="page-item">
+                    <form action="/" method="get">
+                        <button class="page-link" name="offset" value="{{prevOffset}}" type="submit">Previous</button>
+                    </form>
+                </li>
+            
+                <li class="page-item">
+                    <form action="/" method="get">
+                        <button class="page-link" name="offset" value="{{nextOffset}}" type="submit">Next</button>
+                    </form>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    
+</div>
+
+
